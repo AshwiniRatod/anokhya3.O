@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anokhya 3.0 | Coming Soon</title>
+
+  <style>
+    /* ===== GLOBAL STYLES ===== */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #f9b233;
+      font-family: "Poppins", sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    /* ===== COMING SOON ===== */
+    .coming-soon {
+      font-size: 2.8rem;
+      font-weight: 600;
+      text-shadow: 0 0 20px #f9b233, 0 0 40px #f9b233;
+      opacity: 0;
+      animation: fadeInOut 3s ease-in-out forwards;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; }
+      20% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    /* ===== POSTER ===== */
+    .poster {
+      display: none;
+      width: 80%;
+      max-width: 450px;
+      border-radius: 12px;
+      box-shadow: 0 0 40px #f9b23344;
+      animation: fadeIn 1.5s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* ===== HANDLES SECTION ===== */
+    .handles {
+      display: none;
+      margin-top: 25px;
+      font-size: 1rem;
+      color: #f9b233;
+      text-align: center;
+      animation: fadeInHandles 1.5s ease-in-out forwards;
+    }
+
+    @keyframes fadeInHandles {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .handles-title {
+      margin-bottom: 15px;
+      font-weight: 500;
+      text-shadow: 0 0 15px #f9b233;
+    }
+
+    .handles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      justify-content: center;
+      grid-gap: 15px 50px;
+      text-align: left;
+    }
+
+    .handle-item {
+      text-shadow: 0 0 8px #f9b233;
+      transition: 0.3s;
+    }
+
+    .handle-item:hover {
+      color: #fff;
+      text-shadow: 0 0 15px #f9b233, 0 0 25px #f9b233;
+      transform: scale(1.05);
+    }
+
+    a {
+      color: #f9b233;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .coming-soon {
+        font-size: 2rem;
+      }
+      .handles-grid {
+        grid-gap: 10px 25px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Coming Soon -->
+    <div class="coming-soon" id="comingText">Coming Soon...</div>
+
+    <!-- Poster -->
+    <center>
+        <img
+        id="posterImage"
+        class="poster"
+        src="C:\Users\Lenovo\OneDrive\New folder\OneDrive\Documents\scanner\image\poster.jpg"
+        alt="Anokhya 3.0 Poster"
+        />
+    </center>
+
+    <!-- Handles -->
+    <div class="handles" id="handles">
+      <div class="handles-title">For More Info Follow Us:</div>
+      <div class="handles-grid">
+        <div class="handle-item">🌐 <a href="https://anokhya.com" target="_blank">anokhya.com</a></div>
+        <div class="handle-item">🤖 <a href="https://instagram.com/aimldeptdsce" target="_blank">@aimldeptdsce</a></div>
+        <div class="handle-item">📸 <a href="https://instagram.com/_anokhya" target="_blank">@_anokhya</a></div>
+        <div class="handle-item">💼 <a href="https://linkedin.com/company/aimldeptdsce" target="_blank">aimldeptdsce</a></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Step 1: After Coming Soon fades, show poster
+    setTimeout(() => {
+      document.getElementById("comingText").style.display = "none";
+      const poster = document.getElementById("posterImage");
+      poster.style.display = "block";
+
+      // Step 2: Show handles after poster appears
+      setTimeout(() => {
+        const handles = document.getElementById("handles");
+        handles.style.display = "block";
+      }, 2000);
+    }, 2500);
+  </script>
+</body>
+</html>
