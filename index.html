@@ -9,18 +9,18 @@
     body {
       margin: 0;
       padding: 0;
-      height: 85vh;
+      height: 100vh;
       background: radial-gradient(circle at center, #111 0%, #000 100%);
       color: #f9b233;
       font-family: "Poppins", sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
+      text-align: center;
       overflow: hidden;
     }
 
     .container {
-      text-align: center;
       animation: fadeInMain 1.5s ease-out;
       display: flex;
       flex-direction: column;
@@ -52,13 +52,15 @@
     /* ===== POSTER ===== */
     .poster {
       display: none;
-      width: 85%;
-      max-width: 480px;
-      border-radius: 16px;
-    
-      box-shadow: 0 0 20px #9e4c1175, 0 0 60px #9e4c1133;
+      width: auto;
+      height: 80vh; /* 👈 Increased from 80vh to 90vh */
+      max-height: 800px;
+      border-radius: 20px;
+      border: 3px solid #b56a2a;
+      box-shadow: 0 0 30px #b56a2a88, 0 0 80px #b56a2a44;
       animation: fadeIn 1.5s ease-in-out forwards, borderGlow 3s infinite alternate ease-in-out;
       margin-top: 20px;
+      object-fit: contain;
     }
 
     @keyframes fadeIn {
@@ -66,13 +68,12 @@
       to { opacity: 1; transform: scale(1); }
     }
 
-    /* 🟡 Glowing animated border */
     @keyframes borderGlow {
       0% {
-        box-shadow: 0 0 20px #9e4c1188, 0 0 40px #9e4c1144;
+        box-shadow: 0 0 25px #b56a2a88, 0 0 50px #b56a2a33;
       }
       100% {
-        box-shadow: 0 0 40px #f9b233aa, 0 0 80px #f9b23366;
+        box-shadow: 0 0 50px #f9b233aa, 0 0 100px #f9b23366;
       }
     }
 
@@ -130,7 +131,7 @@
     @media (max-width: 600px) {
       .coming-soon { font-size: 2.2rem; }
       .handles-grid { gap: 10px 20px; font-size: 0.9rem; }
-      .poster { width: 90%; }
+      .poster { height: 75vh; } /* Slightly smaller on mobile */
     }
   </style>
 </head>
@@ -170,6 +171,3 @@
   </script>
 </body>
 </html>
-
-
-
